@@ -10,4 +10,4 @@ This repository contains the code for a custom anomaly detection algorithm desig
 - [results](results) : contains the outliers the algorithm detected in [the dataset](anomaly.csv) in plain text
 
 ## More information
-Read [the report](anomaly_detection_report.pdf) :simple_smile:
+Read [the report](anomaly_detection_report.pdf) :)

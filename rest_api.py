@@ -8,11 +8,13 @@ api = Api(app)
 datapoint = {"x":2, "y":3}
 
 class Datapoint(Resource):
+    # Returns the previously submitted datapoint, if any
     def get(self):
         if datapoint is not None:
             return datapoint, 200
         return "No datapoint submitted", 404
     
+    # Submit a new data point (as json message) and returns the score of the submitted datapoint
     def put(self):
         global datapoint
         parser = reqparse.RequestParser()
@@ -28,6 +30,7 @@ class Datapoint(Resource):
         datapoint = {"x":args["x"], "y":args["y"]}
         return score(datapoint), 201
     
+    # Delete the previously submitted data point
     def delete(self):
         global datapoint
         datapoint = None

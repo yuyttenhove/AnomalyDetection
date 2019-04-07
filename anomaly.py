@@ -200,10 +200,6 @@ if __name__ == "__main__":
     eps = np.sort(distances_sorted[:, min_pts])[-20]
     print(eps)
 
-    # helper function for sorting of distances just below this function
-    def getKey(tup):
-        return tup[1]
-
     # distances[i][j] now contains a tuple of the index of the j-th nearest point to point i 
     # and the distance between that point and point i
     distances = [ sorted(zip(range(l), distances[i]), key=(lambda tup : tup[1])) for i in range(l) ]
